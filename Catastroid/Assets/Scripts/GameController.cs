@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
     public static GameController controller;
     public static int MAX_HEALTH = 100;
     public static int BOSS_SCORE = 2000;
+    public static float MAX_WIDTH = 10f;
+    public static float MAX_HEIGHT = 6f;
    
     #region Properties
     private int score = 20;
