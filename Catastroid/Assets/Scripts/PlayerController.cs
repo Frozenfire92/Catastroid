@@ -7,8 +7,7 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 10f)]
     public float moveSpeed = 1f;
 
-    [Range(0.01f, 1f)]
-    public float forwardSpeed = 0.01f;
+    float forwardSpeed = GameController.forwardSpeed;
 
     Vector3 nextPosition;
 
@@ -20,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     float maxWidth = GameController.MAX_WIDTH;
     float maxHeight = GameController.MAX_HEIGHT;
+
 
     void Start()
     {

@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     public static int BOSS_SCORE = 2000;
     public static float MAX_WIDTH = 10f;
     public static float MAX_HEIGHT = 6f;
+    public static float MAX_LENGTH = 100f;
+    public static float forwardSpeed = 0.01f;
+    public static float distanceBehindPlayer = 10f;
    
     #region Properties
     private int score = 20;
