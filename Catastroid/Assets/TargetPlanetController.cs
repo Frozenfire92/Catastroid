@@ -10,6 +10,7 @@ public class TargetPlanetController : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameController.controller.dead = true;
+            GameController.forwardSpeed = 0.1f;
         }
         else
         {
