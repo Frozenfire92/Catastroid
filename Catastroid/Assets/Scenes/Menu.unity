@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
+  won: 0
 --- !u!4 &375023880
 Transform:
   m_ObjectHideFlags: 0

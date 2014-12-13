@@ -34,9 +34,22 @@ public class PlayerController : MonoBehaviour
         nextPosition.y += Input.GetAxis("Vertical") * moveSpeed / 10f;
         if (nextPosition.y >= maxHeight) nextPosition.y = maxHeight;
         if (nextPosition.y <= -maxHeight) nextPosition.y = -maxHeight;
-        nextPosition.z += 0.01f;
+        nextPosition.z += GameController.forwardSpeed;
         transform.position = nextPosition;
         if (Input.GetButtonDown("Fire") && Time.time > nextFireTime) Fire();
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+        GameController.controller.Score = 10;
+        Vector3 scale = transform.localScale;
+        scale.x += 1f;
+        scale.y += 1f;
+        scale.z += 1f;
+        GameController.forwardSpeed += 0.5f;
+        transform.localScale = scale;
     }
 
     public void Fire()

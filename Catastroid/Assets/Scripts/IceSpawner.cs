@@ -27,7 +27,8 @@ public class IceSpawner : MonoBehaviour
         icePatches = new List<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
-            icePatches.Add(Instantiate(Resources.Load("Prefabs/IcePatch", typeof(GameObject))) as GameObject);
+            Vector3 position =  new Vector3(Random.Range(-width, width), Random.Range(-height, height), Random.Range(0f, length));
+            icePatches.Add(Instantiate(Resources.Load("Prefabs/IcePatch", typeof(GameObject)), position, Quaternion.identity) as GameObject);
         }
     }
 }

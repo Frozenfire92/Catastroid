@@ -5,11 +5,12 @@ public class GameController : MonoBehaviour
 {
     public static GameController controller;
     public static int MAX_HEALTH = 100;
-    public static int BOSS_SCORE = 2000;
+    public static int WIN_SCORE = 1000;
     public static float MAX_WIDTH = 10f;
     public static float MAX_HEIGHT = 6f;
-    public static float MAX_LENGTH = 100f;
-    public static float forwardSpeed = 0.01f;
+    public static float MAX_LENGTH = 500f;
+    public static float DESTROY_SPEED = 10f;
+    public static float forwardSpeed = 0.1f;
     public static float distanceBehindPlayer = 10f;
    
     #region Properties
@@ -65,11 +66,12 @@ public class GameController : MonoBehaviour
 	
 	void Update () 
     {
+        Debug.Log(dead);
         if (dead) ChangeLevel("GameOver");
         if (won) ChangeLevel("Win");
         if (Input.GetButtonDown("StartGame") && Application.loadedLevelName == "Menu") ChangeLevel("LevelOne");
         if (Input.GetButtonDown("Menu") && Application.loadedLevelName != "Menu") ChangeLevel("Menu");
-        if (score >= BOSS_SCORE) ChangeLevel("Boss");
+        if (score >= WIN_SCORE) ChangeLevel("Win");
 	}
 
     public void ChangeLevel(string nameOfLevel)
