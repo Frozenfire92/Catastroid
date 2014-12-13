@@ -27,14 +27,14 @@ public class GameController : MonoBehaviour
         set { health += value; }
     }
 
-    private bool dead;
+    public bool dead;
     public bool Dead
     {
         get { return dead; }
         set { dead = value; }
     }
 
-    private bool won;
+    public bool won;
     public bool Won
     {
         get { return won; }
